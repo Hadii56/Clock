@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+.box1, .box2 {
+    width: 50%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+.box1 {
+    left: 0;
+    background-color: rgb(0, 0, 0);
+}
+.box2 {
+    right: 0;
+    background-color: rgb(255, 255, 255);
+}
+.container {
+    width: 420px;
+    height: 420px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.4);
+    z-index: 2; /* Ensures the clock is above the background boxes */
+    background: white; /* Ensures the clock container has a white background */
+}
+.clock {
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    box-shadow: inset 10px 10px 30px rgba(0, 0, 0, 0.4);
+    background-image: url('171-1717365_jam-png-4-png-image-6-clock.png');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clock::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    border-radius: 50%;
+    border: 2px solid red;
+    position: absolute;
+    z-index: 3;
+}
+.hour, .minute, .second {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+.hour {
+    width: 150px;
+    height: 150px;
+}
+.minute {
+    width: 250px;
+    height: 250px;
+}
+.second {
+    width: 350px;
+    height: 350px;
+}
+.hour::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 85px;
+    background-color: rgb(0, 0, 0);
+    z-index: 1;
+    border-radius: 50%;
+}
+.minute::before {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 115px;
+    background-color: black;
+    z-index: 2;
+    border-radius: 50%;
+}
+.second::before {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 150px;
+    background-color: rgb(0, 0, 0);
+    z-index: 3;
+    margin-top: 10px;
+    border-radius: 50%;
+}
